@@ -20,6 +20,7 @@ from profesores.views import padre
 
 urlpatterns = [
     path('admin/', admin.site.urls),  
+    path('',include('profesores.urls')),
     path('profesores/',padre),
-    path("", include(("profesores.urls", "profesores"))),
+    
 ]

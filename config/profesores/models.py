@@ -8,18 +8,27 @@ class Profesores(models.Model):
     email= models.EmailField()
     profesion= models.CharField(max_length= 20)
     
-class Cursos(models.Model):
-    curso = models.CharField(max_length= 50)
-    camada= models.CharField(max_length= 30)
+    def __str__(self) -> str:
+        return f"{self.nombre},{self.apellido}"
+    
+    
+# class Cursos(models.Model):
+#     curso = models.CharField(max_length= 50)
+#     camada= models.CharField(max_length= 30)
 
 class Estudiantes (models.Model):
     nombre= models.CharField(max_length= 30)
     apellido = models.CharField(max_length=30)
     email= models.EmailField()
+    
+    def __str__(self) -> str:
+        return self.nombre
 
 
 class Entregables(models.Model):
     nombre = models.CharField(max_length= 30)
     fecha_de_entrega= models.DateField()
     entregado = models.BooleanField()
+    def __str__(self) -> str:
+        return self.nombre
     

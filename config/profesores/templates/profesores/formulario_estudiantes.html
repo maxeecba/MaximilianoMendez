@@ -1,0 +1,20 @@
+{% extends 'profesores/padre.html' %} 
+
+{% load static %}    
+
+{% block contenido_que_cambia %}
+    <!-- <form action="/formulario/" method="post">
+    {% csrf_token %}    
+    <p>Nombre: <input type="text" name="Nombre"></p>
+    <p>Apellido <input type="text" name="Apellido"></p>
+    <p>Email <input type="text" name="Email"></p>
+    <p>Profesion <input type="text" name="Profesion"></p>
+    <input type="submit" value="Enviar">
+    
+    </form> -->
+    <form action="/formulario_estudiante/" method="post">
+        {% csrf_token %}    
+        {{ formulario_estudiantes.as_p }}
+        <input type="submit" value="Enviar">
+        </form>
+{% endblock contenido_que_cambia %}
