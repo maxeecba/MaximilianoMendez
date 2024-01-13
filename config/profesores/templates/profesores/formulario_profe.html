@@ -13,6 +13,7 @@
     
     </form> -->
     <form action="/formulario_profesor/" method="post">
+        <h2>Crear Profesor</h2>
         {% csrf_token %}    
         {{ formulario.as_p }}
         <input type="submit" value="Enviar">

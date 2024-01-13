@@ -13,6 +13,7 @@
     
     </form> -->
     <form action="/formulario_entregables/" method="post">
+        <h2>Entrega de trabajos</h2>
         {% csrf_token %}    
         {{ formulario_entregables.as_p }}
         <input type="submit" value="Enviar">
