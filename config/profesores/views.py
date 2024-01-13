@@ -31,3 +31,6 @@ def entregables_formulario(request):
             return render(request, "profesores/formulario_entregables.html")
     else: formulario = EntregablesForm()
     return render(request,'profesores/formulario_entregables.html', {'formulario_entregables': formulario})
+
+def videos(request):
+    return render (request,'profesores/video.html')

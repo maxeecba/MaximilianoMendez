@@ -4,15 +4,133 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Padre</title>
+
 </head>
 <body>
     <h1>Coder House</h1>
-    <h2> Link1</h2>
-    
-    
-    {% block contenido_que_cambia %}
+    <div class="nav-links">
+        <button><a href="{% url 'inicio' %}">INICIO</a></button>
+        <a href="{% url 'profesores_name' %}">Añadir Profesor</a>
+        <a href="{% url 'est_form' %}">Añadir Estudiante</a>
+        <a href="{% url 'entregables_form' %}">Entregar Trabajo</a>
+        <a href="{% url 'videos' %}">Mi Primer Trabajo</a>
+    </div>
 
-    {% endblock contenido_que_cambia %}
-    
+    <div class="form-container">
+        {% block contenido_que_cambia %}
+
+        {% endblock contenido_que_cambia %}
+    </div>
+
+
+
 </body>
+
+<style>
+        
+    body {
+        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)), url(https://img.freepik.com/vector-gratis/fondo-digital-codigo-binario-estilo-matriz-numeros-que-caen_1017-25336.jpg?w=1380&t=st=1705104003~exp=1705104603~hmac=743f8dd8e5ae44843228bd46cd8e75c97a65c41ba1078cb03fb3bce1ad382787);
+        background-color: #111;
+        color: #f8f8f8;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+
+    }
+
+    h1 {
+        font-size: 80px;
+        text-align: center;
+        color: #ffffff;            
+        border-color: brown;
+        padding: 10px;
+        margin-top: 40px;
+    }
+
+    button {
+        background-color: #00000000;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+        margin: 10px;
+        margin-top: 0;
+    }
+
+    button a {
+        color: #fff;
+        text-decoration:double;
+    }
+
+    .nav-links {
+        text-align: center;
+        margin-top: 0px;
+        color: rgb(245, 245, 220);
+        font-size: 20px;
+    }
+
+    .nav-links a {
+        margin: 0 30px;
+        color: #ffffff; 
+        text-decoration: none;
+    }
+
+    .nav-links a:hover {
+        text-decoration: underline;
+        
+    }
+
+    .form-container {
+        text-align: center;
+        max-width: 400px;
+        margin: 65px auto;
+        padding: 40px;
+        background-color: #f3f3f325; 
+        border-radius: 8px;
+        box-shadow: 0 0 2px rgba(255, 9, 9, 0.1);
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #3b39397d;
+        border-radius: 4px;
+    }
+
+    form input[type="submit"] {
+        background-color: #4a4a4a; /* Gris oscuro para el botón de enviar */
+        color: #ffffff;
+        cursor: pointer;
+    }
+    
+.form-container {
+text-align: center;
+max-width: 400px;
+margin: 65px auto;
+padding: 40px;
+background-color: #f3f3f325; 
+border-radius: 8px;
+box-shadow: 0 0 2px rgba(255, 9, 9, 0.1);
+opacity: 0; /* Inicialmente, establecemos la opacidad en 0 */
+animation: fade-in-form 1.5s ease-out forwards; /* Animación de fade-in en 1.5 segundos */
+}
+
+@keyframes fade-in-form {
+from {
+    opacity: 0;
+    transform: translateY(-20px); /* Desplazamos el formulario hacia arriba durante la aparición */
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+
+</style>
 </html>
