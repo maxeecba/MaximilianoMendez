@@ -16,7 +16,7 @@ cd MaximilianoMendez
 ----------------------------------------------------------------
 Entorno Virtual:
 
-instalar el entorno virtual dentro de la carpeta preentregafinal(donde se encuentra el archivo .gitignore para que no haya errores):
+instalar el entorno virtual dentro de la carpeta MaximilianoMendez(donde se encuentra el archivo .gitignore para que no haya errores):
 py -m venv .venv
 
 activar el entorno virtual con el siguiente comando:
