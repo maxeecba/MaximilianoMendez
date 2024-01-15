@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import padre,profesor_formulario, estudiante_formulario,entregables_formulario,videos,leer_profesores,eliminar_profesor,leer_estudiantes,eliminar_estudiante
+from .views import padre,profesor_formulario, estudiante_formulario,entregables_formulario,videos,leer_profesores,eliminar_profesor,leer_estudiantes,eliminar_estudiante,editar_profesor
 from django.contrib import admin
 
 urlpatterns = [
@@ -13,5 +13,5 @@ urlpatterns = [
     path("eliminarprofesor/<profesor_nombre>/",eliminar_profesor,name='eliminarprofesor'),
     path("leerestudiantes/",leer_estudiantes,name='leer_estudiantes'),
     path("eliminarestudiante/<estudiante_nombre>/",eliminar_estudiante,name='eliminarestudiante'),
-    
+    path('editarProfesor/<profesor_nombre>/', editar_profesor, name="EditarProfesor")
 ]

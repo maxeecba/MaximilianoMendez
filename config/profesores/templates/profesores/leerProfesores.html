@@ -12,6 +12,7 @@
     <br>
         <li>{{i}}</li>    
         <a href="{% url 'eliminarprofesor' profesor_nombre=i.nombre %}" style="color: rgba(255, 1, 1, 0.574);">Eliminar profesor</a>
+        <a href="{% url 'EditarProfesor' profesor_nombre=i.nombre %}" style="color: rgba(255, 1, 1, 0.574);">Editar profesor</a>
     <br>
     {%endfor%}
     
