@@ -9,7 +9,7 @@ class Profesores(models.Model):
     profesion= models.CharField(max_length= 20)
     
     def __str__(self) -> str:
-        return f"{self.nombre},{self.apellido}"
+        return f"nombre y apellido: {self.nombre} {self.apellido}"
     
 
 class Estudiantes(models.Model):
@@ -18,7 +18,7 @@ class Estudiantes(models.Model):
     email= models.EmailField()
     
     def __str__(self) -> str:
-        return f"{self.nombre}{self.apellido}"
+        return f"nombre y apellido: {self.nombre} {self.apellido}"
 
     
 class Entregables(models.Model):

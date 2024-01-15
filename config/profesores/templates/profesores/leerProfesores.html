@@ -1,0 +1,16 @@
+{% extends 'profesores/padre.html' %} 
+
+{% load static %}    
+
+{% block contenido_que_cambia %}
+    
+    <a href="{% url 'profesores_name' %}" style="color: rgb(0, 110, 255); font-size: 20px; " >Añadir Profesor </a>
+    {% csrf_token %}
+    
+    {%for i in profesores %}
+    
+    <li>{{i}}</li>
+    <a href="{% url 'eliminarprofesor' profesor_nombre=i.nombre %}">Eliminar profesor</a>
+    {%endfor%}
+
+{% endblock contenido_que_cambia %}

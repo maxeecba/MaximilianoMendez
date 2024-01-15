@@ -9,11 +9,12 @@
 <body>
     <h1>Coder House</h1>
     <div class="nav-links">
-        <button><a href="{% url 'inicio' %}">INICIO</a></button>
-        <a href="{% url 'profesores_name' %}">Añadir Profesor</a>
-        <a href="{% url 'est_form' %}">Añadir Estudiante</a>
+        <button><a href="{% url 'inicio' %}">INICIO</a></button>        
+        <a href="{% url 'leer_estudiantes' %}">Estudiantes</a>
+        <a href="{% url 'leerprofesores2' %}">Profesores</a>
         <a href="{% url 'entregables_form' %}">Entregar Trabajo</a>
         <a href="{% url 'videos' %}">Mi Primer Trabajo</a>
+        
     </div>
 
     <div class="form-container">
@@ -91,6 +92,7 @@
         background-color: #f3f3f325; 
         border-radius: 8px;
         box-shadow: 0 0 2px rgba(255, 9, 9, 0.1);
+        
     }
 
     form input[type="text"],
