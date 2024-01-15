@@ -3,15 +3,17 @@
 {% load static %}    
 
 {% block contenido_que_cambia %}
-    
-    <a href="{% url 'profesores_name' %}" style="color: rgba(163, 255, 178, 0.585); font-size: 20px; " >Añadir Profesor </a>
     {% csrf_token %}
+    <a href="{% url 'profesores_name' %}" style="color: rgba(163, 255, 178, 0.585); font-size: 20px; " >Añadir Profesor </a>
+    <br><br>
+    
     
     {%for i in profesores %}
-    
-    <li>{{i}}</li>
-    
-    <a href="{% url 'eliminarprofesor' profesor_nombre=i.nombre %}" style="color: rgba(255, 1, 1, 0.574);">Eliminar profesor</a>
+    <br>
+        <li>{{i}}</li>    
+        <a href="{% url 'eliminarprofesor' profesor_nombre=i.nombre %}" style="color: rgba(255, 1, 1, 0.574);">Eliminar profesor</a>
+    <br>
     {%endfor%}
+    
 
 {% endblock contenido_que_cambia %}

@@ -3,19 +3,13 @@
 {% load static %}    
 
 {% block contenido_que_cambia %}
-    <!-- <form action="/formulario/" method="post">
-    {% csrf_token %}    
-    <p>Nombre: <input type="text" name="Nombre"></p>
-    <p>Apellido <input type="text" name="Apellido"></p>
-    <p>Email <input type="text" name="Email"></p>
-    <p>Profesion <input type="text" name="Profesion"></p>
-    <input type="submit" value="Enviar">
-    
-    </form> -->
+    {% csrf_token %}
     <form action="/formulario_entregables/" method="post">
         <h2>Entrega de trabajos</h2>
-        {% csrf_token %}    
+
         {{ formulario_entregables.as_p }}
+        <br>
         <input type="submit" value="Enviar">
-        </form>
+    </form>
+
 {% endblock contenido_que_cambia %}
