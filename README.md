@@ -12,7 +12,7 @@ git clone https://github.com/maxeecba/MaximilianoMendez.git
 CD comando para moverse de carpetas: 
 
 Moverse a la carpeta MaximilianoMendez:
-cd preentregafinal
+cd MaximilianoMendez
 ----------------------------------------------------------------
 Entorno Virtual:
 
