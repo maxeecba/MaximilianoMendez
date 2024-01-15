@@ -4,13 +4,14 @@
 
 {% block contenido_que_cambia %}
     
-    <a href="{% url 'profesores_name' %}" style="color: rgb(0, 110, 255); font-size: 20px; " >Añadir Profesor </a>
+    <a href="{% url 'profesores_name' %}" style="color: rgba(163, 255, 178, 0.585); font-size: 20px; " >Añadir Profesor </a>
     {% csrf_token %}
     
     {%for i in profesores %}
     
     <li>{{i}}</li>
-    <a href="{% url 'eliminarprofesor' profesor_nombre=i.nombre %}">Eliminar profesor</a>
+    
+    <a href="{% url 'eliminarprofesor' profesor_nombre=i.nombre %}" style="color: rgba(255, 1, 1, 0.574);">Eliminar profesor</a>
     {%endfor%}
 
 {% endblock contenido_que_cambia %}
