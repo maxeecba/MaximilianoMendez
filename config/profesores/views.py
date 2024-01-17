@@ -50,7 +50,16 @@ class ProfesoresList(ListView):
     model = Profesores
     template_name= 'profesores/leerProfesores.html'
     context_object_name= 'profesores'
-
+    
+    def get_queryset(self):
+        if self.request.GET.get("consulta"):
+            consultar= self.request.GET.get("consulta")
+            object_list = Profesores.objects.filter(nombre__icontains=consultar)
+        else:
+            object_list = Profesores.objects.all()
+        return object_list
+    
+    
 def eliminar_profesor(request, profesor_nombre):
     profesor = Profesores.objects.filter(nombre=profesor_nombre)
     profesor.delete()

@@ -4,6 +4,13 @@
 
 {% block contenido_que_cambia %}
     {% csrf_token %}
+
+    <form action="{% url 'leerprofesores2' %}">
+
+        <input type="text" name="consulta" placeholder="Buscar.." style="background-color: rgba(234, 234, 234, 0.577);">
+
+    </form> 
+
     <a href="{% url 'profesores_name' %}" style="color: rgba(234, 234, 234, 0.577); font-size: 20px; " >Añadir Profesor </a>
     <br><br>
     
