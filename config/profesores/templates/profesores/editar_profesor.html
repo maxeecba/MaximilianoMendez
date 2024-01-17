@@ -10,7 +10,8 @@
     <p style="color:red;"> Están mal los datos, revisar</p>
 {% endif %}
 
-<form action="" method="POST">{%csrf_token%}
+<form action="" method="POST">
+    {%csrf_token%}
     <h2 style ="font-size: 30px;">Editar Profesor</h2>
     <table>
         {{proForm.as_table}}
