@@ -1,0 +1,24 @@
+{% extends 'profesores/padre.html' %} 
+
+{% load static %}    
+
+{% block contenido_que_cambia %}
+    {% csrf_token %}
+    <form action="{% url 'estudiantes_list' %}">
+
+        <input type="text" name="consulta" placeholder="Buscar.." style="background-color: rgba(234, 234, 234, 0.577);">
+
+    </form>    
+    <br>
+    <a href="{% url 'est_form' %}" style="color: rgba(209, 237, 255, 0.628); font-size: 20px;" >Añadir Estudiante </a>
+    <br>
+
+    {%for estudiante in object_list %}
+    <br>
+        
+        <li>{{estudiante}}</li>
+        <a href="{% url 'eliminarestudiante' estudiante_nombre=estudiante.nombre %}" style="color: rgba(255, 1, 1, 0.574);">Eliminar</a>
+    <br>
+    {%endfor%}
+
+{% endblock contenido_que_cambia %}

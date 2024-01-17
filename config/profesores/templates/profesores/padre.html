@@ -10,7 +10,7 @@
     <h1>Coder House</h1>
     <div class="nav-links">
         <button><a href="{% url 'inicio' %}">INICIO</a></button>        
-        <a href="{% url 'leer_estudiantes' %}">Estudiantes</a>
+        <a href="{% url 'estudiantes_list' %}">Estudiantes</a>
         <a href="{% url 'leerprofesores2' %}">Profesores</a>
         <a href="{% url 'entregables_form' %}">Entregar Trabajo</a>
         <a href="{% url 'videos' %}">Mi Primer Trabajo</a>
@@ -29,16 +29,21 @@
 
 <style>
         
-    body {
-        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)), url(https://img.freepik.com/vector-gratis/fondo-digital-codigo-binario-estilo-matriz-numeros-que-caen_1017-25336.jpg?w=1380&t=st=1705104003~exp=1705104603~hmac=743f8dd8e5ae44843228bd46cd8e75c97a65c41ba1078cb03fb3bce1ad382787);
-        background-color: #111;
-        color: #f8f8f8;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        margin: 10px;
-        padding: 10px;
+        body {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)),
+                url(https://miro.medium.com/v2/resize:fit:1400/1*OmDFz-m0IRyG6dGxigFr8w.jpeg);
+    background-color: #111;
+    color: #f8f8f8;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0; /* Elimina el margen predeterminado del body */
+    padding: 0; /* Elimina el relleno predeterminado del body */
+    height: 100vh; /* Asegura que el body ocupe el 100% de la altura de la ventana */
 
-    }
-
+    /* Establece la imagen de fondo para cubrir toda la pantalla */
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
     h1 {
         font-size: 80px;
         text-align: center;
@@ -89,7 +94,7 @@
         
         margin: 205px auto;
         padding: 40px;
-        background-color: #88d955c7; 
+        background-color: #44b190c7; 
         border-radius: 8px;
         box-shadow: 0 0 2px rgba(255, 9, 9, 0.1);
         
@@ -106,7 +111,7 @@
     }
 
     form input[type="submit"] {
-        background-color: #17dc3b69; /* Gris oscuro para el botón de enviar */
+        background-color: #096a507d; /* Gris oscuro para el botón de enviar */
         color: #ffffff;
         cursor: pointer;
     }
@@ -116,9 +121,9 @@ text-align: center;
 max-width: 330px;
 margin: 65px auto;
 padding: 60px;
-background-color: #0d8e2939; 
+background-color: #1045384c; 
 border-radius: 10px;
-box-shadow: 0 0 2px rgba(255, 9, 9, 0.1);
+
 opacity: 0; /* Inicialmente, establecemos la opacidad en 0 */
 animation: fade-in-form 2.0s ease-out forwards; /* Animación de fade-in en 1.5 segundos */
 }

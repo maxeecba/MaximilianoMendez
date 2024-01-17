@@ -1,6 +1,9 @@
+from typing import Any
+from django.db.models.query import QuerySet
 from django.shortcuts import render
 from .models import Profesores,Estudiantes
 from .forms import ProfesoresForm,EstudiantesForm, EntregablesForm
+from django.views.generic import ListView,CreateView,DetailView,UpdateView,DeleteView
 # Pagina principal
 def padre(request):
     return render(request,'profesores/padre.html')
@@ -29,7 +32,8 @@ def entregables_formulario(request):
         if formulario.is_valid():
             formulario.save()
             return render(request, "profesores/formulario_entregables.html")
-    else: formulario = EntregablesForm()
+    else: 
+        formulario = EntregablesForm()
     return render(request,'profesores/formulario_entregables.html', {'formulario_entregables': formulario})
 #---------------------------------------------------------------------------------------------------------------
 #Extra - Video
@@ -37,11 +41,16 @@ def videos(request):
     return render (request,'profesores/video.html')
 
 #LEER Formulario
-def leer_profesores(request):
-    profesor = Profesores.objects.all()#todos los profesores de la base de datos
-    contexto = {'profesores':profesor} # ace va la lista de profesores
-    return render(request,'profesores/leerProfesores.html', contexto)
+# def leer_profesores(request):
+#     profesor = Profesores.objects.all()#todos los profesores de la base de datos
+#     contexto = {'profesores':profesor} # ace va la lista de profesores
+#     return render(request,'profesores/leerProfesores.html', contexto)
 #Eliminar formulario
+class ProfesoresList(ListView):
+    model = Profesores
+    template_name= 'profesores/leerProfesores.html'
+    context_object_name= 'profesores'
+
 def eliminar_profesor(request, profesor_nombre):
     profesor = Profesores.objects.filter(nombre=profesor_nombre)
     profesor.delete()
@@ -51,10 +60,21 @@ def eliminar_profesor(request, profesor_nombre):
     return render(request,"profesores/leerProfesores.html",contexto)
     
 #LEER Formulario
-def leer_estudiantes(request):
-    estudiante = Estudiantes.objects.all()#todos los profesores de la base de datos
-    contexto = {'estudiantes':estudiante} # ace va la lista de profesores
-    return render(request,'profesores/leerEstudiantes.html', contexto)
+# def leer_estudiantes(request):
+#     estudiante = Estudiantes.objects.all()#todos los profesores de la base de datos
+#     contexto = {'estudiantes':estudiante} # ace va la lista de profesores
+#     return render(request,'profesores/leerEstudiantes.html', contexto)
+class EstudiantesList(ListView):
+    model = Estudiantes
+    
+    def get_queryset(self):
+        if self.request.GET.get("consulta"):
+            consultar= self.request.GET.get("consulta")
+            object_list =Estudiantes.objects.filter(nombre__icontains=consultar)
+        else:
+            object_list = Estudiantes.objects.all()
+        return object_list
+
 #Eliminar formulario
 def eliminar_estudiante(request,estudiante_nombre):
     estudiante= Estudiantes.objects.filter(nombre=estudiante_nombre)
@@ -62,7 +82,8 @@ def eliminar_estudiante(request,estudiante_nombre):
     
     estudiantes = Estudiantes.objects.all()
     contexto ={'estudiantes':estudiantes}
-    return render (request,'profesores/leerEstudiantes.html',contexto)
+    return render (request,'profesores/estudiantes_list.html',contexto)
+
 
 #Editar Profesor
 
