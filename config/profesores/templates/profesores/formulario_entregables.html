@@ -3,8 +3,9 @@
 {% load static %}    
 
 {% block contenido_que_cambia %}
-    {% csrf_token %}
     <form action="/formulario_entregables/" method="post">
+        {% csrf_token %}
+        
         <h2>Entrega de trabajos</h2>
 
         {{ formulario_entregables.as_p }}
